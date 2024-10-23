@@ -1,10 +1,10 @@
 package br.com.alura.sreenmatch.models;
 
 public class Movie {
-    public String name;
-    public int releaseYear;
-    public boolean planIncluded;
-    public int durationInMinutes;
+    private String name;
+    private int releaseYear;
+    private boolean planIncluded;
+    private int durationInMinutes;
     private int totalReviews;
     private double sumOfGrades;
 
@@ -16,6 +16,18 @@ public class Movie {
         System.out.println("Quantidade de valiações: " + totalReviews);
         System.out.println("Estrelas: " + getStars());
         System.out.println("*****************************");
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setReleaseYear(int releaseYear) {
+        this.releaseYear = releaseYear;
+    }
+
+    public void setDurationInMinutes(int durationInMinutes) {
+        this.durationInMinutes = durationInMinutes;
     }
 
     public void evaluates(double grade) {
