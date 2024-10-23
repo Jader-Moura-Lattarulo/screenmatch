@@ -1,12 +1,14 @@
-public class Movie {
-    String name;
-    int releaseYear;
-    boolean planIncluded;
-    int durationInMinutes;
-    int totalReviews;
-    double sumOfGrades;
+package br.com.alura.sreenmatch.models;
 
-    void displaysTechnicalSheet() {
+public class Movie {
+    public String name;
+    public int releaseYear;
+    public boolean planIncluded;
+    public int durationInMinutes;
+    private int totalReviews;
+    private double sumOfGrades;
+
+    public void displaysTechnicalSheet() {
         System.out.println("*****************************");
         System.out.println("Nome do Filme: " + name);
         System.out.println("Ano de lançamento: " + releaseYear);
@@ -16,12 +18,12 @@ public class Movie {
         System.out.println("*****************************");
     }
 
-    void evaluates(double grade) {
+    public void evaluates(double grade) {
         sumOfGrades += grade;
         totalReviews ++;
     }
 
-    double getStars() {
+    public double getStars() {
         return (sumOfGrades / totalReviews) / 2;
     }
 
