@@ -14,7 +14,7 @@ public class Title {
     //    System.out.println("Ano de lançamento: " + releaseYear);
     //    System.out.println("Duração: " + durationInMinutes + "min");
     //    System.out.println("Quantidade de valiações: " + totalReviews);
-    //    System.out.println("Estrelas: " + getStars());
+    //    System.out.println("Estrelas: " + getAverage());
     //    System.out.println("*****************************");
     //}
 
@@ -39,8 +39,8 @@ public class Title {
         totalReviews ++;
     }
 
-    public double getStars() {
-        return (sumOfGrades / totalReviews) / 2;
+    public double getAverage() {
+        return sumOfGrades / totalReviews;
     }
 
 }

@@ -1,4 +1,6 @@
+import calculations.RecommendationFilter;
 import calculations.TimeCalculator;
+import models.Episode;
 import models.Movie;
 import models.Series;
 
@@ -41,6 +43,15 @@ public class Main {
         calculator.includes(movie02);
         calculator.includes(serie);
         System.out.print(calculator.getTotalTime());
+
+        RecommendationFilter filter = new RecommendationFilter();
+        filter.filters(movie02);
+
+        Episode episode = new Episode();
+        episode.setNumber(1);
+        episode.setSeries(serie);
+        episode.setTotalViews(350);
+        filter.filters(episode);
 
     }
 }
