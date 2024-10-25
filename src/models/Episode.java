@@ -45,7 +45,7 @@ public class Episode implements Classifiable {
         if (totalViews > 100) {
             return 4;
         } else {
-            return 2;
+            return 1;
         }
 
     }
