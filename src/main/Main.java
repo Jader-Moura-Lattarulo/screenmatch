@@ -1,3 +1,5 @@
+package main;
+
 import calculations.RecommendationFilter;
 import calculations.TimeCalculator;
 import models.Episode;
@@ -8,13 +10,13 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Movie movie = new Movie("About time", 2013);
+        Movie movie01 = new Movie("About time", 2013);
 
-        movie.setDurationInMinutes(123);
+        movie01.setDurationInMinutes(123);
 
-        movie.evaluates(10);
-        movie.evaluates(9);
-        movie.evaluates(8.5);
+        movie01.evaluates(10);
+        movie01.evaluates(9);
+        movie01.evaluates(8.5);
 
         Movie movie02 = new Movie("Aladdin", 2019);
 
@@ -24,20 +26,20 @@ public class Main {
         movie02.evaluates(9);
         movie02.evaluates(8.5);
 
-        Series serie = new Series("Bones", 2005);
+        Series serie01 = new Series("Bones", 2005);
 
-        serie.setSeasons(12);
-        serie.setEpisodesPerSeason(25);
-        serie.setMinutesPerEpisode(55);
+        serie01.setSeasons(12);
+        serie01.setEpisodesPerSeason(25);
+        serie01.setMinutesPerEpisode(55);
 
-        serie.evaluates(10);
-        serie.evaluates(9);
-        serie.evaluates(8.5);
+        serie01.evaluates(10);
+        serie01.evaluates(9);
+        serie01.evaluates(8.5);
 
         TimeCalculator calculator = new TimeCalculator();
-        calculator.includes(movie);
+        calculator.includes(movie01);
         calculator.includes(movie02);
-        calculator.includes(serie);
+        calculator.includes(serie01);
         System.out.print(calculator.getTotalTime());
 
         RecommendationFilter filter = new RecommendationFilter();
@@ -45,7 +47,7 @@ public class Main {
 
         Episode episode = new Episode();
         episode.setNumber(1);
-        episode.setSeries(serie);
+        episode.setSeries(serie01);
         episode.setTotalViews(350);
         filter.filters(episode);
 
@@ -56,7 +58,7 @@ public class Main {
         ArrayList<Movie> moviesList = new ArrayList<>();
         moviesList.add(movie03);
         moviesList.add(movie02);
-        moviesList.add(movie);
+        moviesList.add(movie01);
 
         System.out.println("Tamanho da lista: " + moviesList.size());
         System.out.println("Primeiro filme da lista: " + moviesList.getFirst().getName());
