@@ -4,6 +4,8 @@ import models.Episode;
 import models.Movie;
 import models.Series;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         Movie movie = new Movie();
@@ -52,6 +54,22 @@ public class Main {
         episode.setSeries(serie);
         episode.setTotalViews(350);
         filter.filters(episode);
+
+        var movie03 = new Movie();
+        movie03.setName("A Família Mitchell e a Revolta das Máquinas");
+        movie03.setReleaseYear(2021);
+        movie03.evaluates(10);
+        movie03.setDurationInMinutes(114);
+
+        ArrayList<Movie> moviesList = new ArrayList<>();
+        moviesList.add(movie03);
+        moviesList.add(movie02);
+        moviesList.add(movie);
+
+        System.out.println("Tamanho da lista: " + moviesList.size());
+        System.out.println("Primeiro filme da lista: " + moviesList.getFirst().getName());
+
+
 
     }
 }

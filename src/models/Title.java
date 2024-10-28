@@ -22,6 +22,10 @@ public class Title {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setReleaseYear(int releaseYear) {
         this.releaseYear = releaseYear;
     }
