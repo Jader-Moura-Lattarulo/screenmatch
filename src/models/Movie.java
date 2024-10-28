@@ -4,6 +4,11 @@ import calculations.Classifiable;
 public class Movie extends Title implements Classifiable {
     private String diretor;
 
+    public Movie(String name, int releaseYear) {
+        super(name, releaseYear);
+    }
+
+
     public String getDiretor() {
         return diretor;
     }

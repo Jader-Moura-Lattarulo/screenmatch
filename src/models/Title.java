@@ -8,6 +8,11 @@ public class Title {
     private int totalReviews;
     private double sumOfGrades;
 
+    public Title(String name, int releaseYear) {
+        this.name = name;
+        this.releaseYear = releaseYear;
+    }
+
     //public void displaysTechnicalSheet() {
     //    System.out.println("*****************************");
     //    System.out.println("Nome do Filme: " + name);

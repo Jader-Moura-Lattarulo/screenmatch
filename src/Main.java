@@ -8,30 +8,24 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Movie movie = new Movie();
+        Movie movie = new Movie("About time", 2013);
 
-        movie.setName("About time");
-        movie.setReleaseYear(2013);
         movie.setDurationInMinutes(123);
 
         movie.evaluates(10);
         movie.evaluates(9);
         movie.evaluates(8.5);
 
-        Movie movie02 = new Movie();
+        Movie movie02 = new Movie("Aladdin", 2019);
 
-        movie02.setName("Aladdin");
-        movie02.setReleaseYear(2019);
         movie02.setDurationInMinutes(128);
 
         movie02.evaluates(10);
         movie02.evaluates(9);
         movie02.evaluates(8.5);
 
-        Series serie = new Series();
+        Series serie = new Series("Bones", 2005);
 
-        serie.setName("Bones");
-        serie.setReleaseYear(2005);
         serie.setSeasons(12);
         serie.setEpisodesPerSeason(25);
         serie.setMinutesPerEpisode(55);
@@ -55,9 +49,7 @@ public class Main {
         episode.setTotalViews(350);
         filter.filters(episode);
 
-        var movie03 = new Movie();
-        movie03.setName("A Família Mitchell e a Revolta das Máquinas");
-        movie03.setReleaseYear(2021);
+        var movie03 = new Movie("A Família Mitchell e a Revolta das Máquinas", 2021);
         movie03.evaluates(10);
         movie03.setDurationInMinutes(114);
 
@@ -72,8 +64,5 @@ public class Main {
         System.out.println(moviesList);
 
         System.out.println("toString do filme: " + moviesList.getFirst().toString());
-
-
-
     }
 }
