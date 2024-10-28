@@ -30,6 +30,10 @@ public class Title {
         this.releaseYear = releaseYear;
     }
 
+    public int getReleaseYear() {
+        return releaseYear;
+    }
+
     public void setDurationInMinutes(int durationInMinutes) {
         this.durationInMinutes = durationInMinutes;
     }
