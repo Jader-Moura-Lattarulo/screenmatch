@@ -4,7 +4,7 @@ import models.Movie;
 import models.Series;
 import models.Title;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class MainWithLists {
     public static void main(String[] args) {
@@ -26,8 +26,27 @@ public class MainWithLists {
 
         for (Title item : watchedList){
             System.out.println(item.getName());
-            Movie movie = (Movie) item;
-            System.out.println("Classificação: " + movie.getClassification());
+            if(item instanceof Movie movie && movie.getClassification() > 2)
+                System.out.println("Classificação: " + movie.getClassification());
         }
+
+        List<String> searchByArtist;
+        searchByArtist = new LinkedList<>();
+        searchByArtist.add("Adam Sandler");
+        searchByArtist.add("Robert Downey Jr.");
+        searchByArtist.add("Angelina Jolie");
+        searchByArtist.add("Emma Stone");
+        System.out.println(searchByArtist);
+
+        Collections.sort(searchByArtist);
+        System.out.printf("Depois da ordenação:%n%s%n",searchByArtist);
+
+        Collections.sort(watchedList);
+        System.out.printf("Ordenação de filmes:%n%s%n", watchedList);
+
+        watchedList.sort(Comparator.comparing(Title::getReleaseYear));
+        System.out.printf("Ordenação de filmes por ano:%n%s%n", watchedList);
+
+
     }
 }
