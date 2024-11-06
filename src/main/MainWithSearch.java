@@ -11,7 +11,7 @@ public class MainWithSearch {
     public static void main(String[] args) throws IOException, InterruptedException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Digite um filme para busca: ");
-        var search = scanner.nextLine();
+        var search = scanner.nextLine().replace(' ', '+');
 
         String address = "http://www.omdbapi.com/?t=" + search + "&apikey=79863d6d";
 
