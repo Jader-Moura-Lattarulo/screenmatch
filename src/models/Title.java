@@ -1,7 +1,11 @@
 package models;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Title implements Comparable<Title>{
+    @SerializedName("Title")
     private String name;
+    @SerializedName("Year")
     private int releaseYear;
     private boolean planIncluded;
     private int durationInMinutes;
@@ -11,6 +15,12 @@ public class Title implements Comparable<Title>{
     public Title(String name, int releaseYear) {
         this.name = name;
         this.releaseYear = releaseYear;
+    }
+
+    public Title(OmdbTitle myTitleOmdb) {
+        this.name = myTitleOmdb.title();
+        this.releaseYear = Integer.valueOf(myTitleOmdb.year());
+        this.durationInMinutes = Integer.valueOf(myTitleOmdb.runtime().substring(0, 2));
     }
 
     //public void displaysTechnicalSheet() {
@@ -59,5 +69,14 @@ public class Title implements Comparable<Title>{
     @Override
     public int compareTo(Title otherTitle) {
         return this.getName().compareTo(otherTitle.getName());
+    }
+
+    @Override
+    public String toString() {
+        return "Title{" +
+                "name='" + name + '\'' +
+                ", releaseYear=" + releaseYear +
+                ", duration=" + durationInMinutes +
+                '}';
     }
 }
